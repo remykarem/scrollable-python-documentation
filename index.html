@@ -1,0 +1,79 @@
+---
+layout: tutorial
+---
+<h1>your_python_file.py</h1>
+<div id="annotated-code">
+<!-- Code Blocks -->
+<div class="annotated-code__pane annotated-code__pane--code-container">
+<div class="annotated-code__code-block" id="c0">
+{% highlight python %}
+n_features = X.shape[1]
+n_classes = len(self.classes_)
+self.theta_ = np.zeros((n_classes, n_features))
+self.sigma_ = np.zeros((n_classes, n_features))
+{% endhighlight %}
+</div>
+<div class="annotated-code__code-block" id="c1">
+{% highlight python %}
+self.class_count_ = np.zeros(n_classes, dtype=np.float64)
+{% endhighlight %}
+</div>
+<div class="annotated-code__code-block" id="c2">
+{% highlight python %}
+if self.priors is not None:
+{% endhighlight %}
+</div>
+<div class="annotated-code__code-block" id="c3">
+{% highlight python %}
+    priors = np.asarray(self.priors)
+{% endhighlight %}
+</div>
+<div class="annotated-code__code-block" id="c4">
+{% highlight python %}
+    if len(priors) != n_classes:
+        raise ValueError('Number of priors must match number of'
+                            ' classes.')
+{% endhighlight %}
+</div>
+<div class="annotated-code__code-block" id="c5">
+{% highlight python %}
+    if not np.isclose(priors.sum(), 1.0):
+        raise ValueError('The sum of the priors should be 1.')
+{% endhighlight %}
+</div>
+<div class="annotated-code__code-block" id="c6">
+{% highlight python %}
+    if (priors < 0).any():
+        raise ValueError('Priors must be non-negative.')
+    self.class_prior_ = priors
+{% endhighlight %}
+</div>
+<div class="annotated-code__code-block" id="c7">
+{% highlight python %}
+else:
+{% endhighlight %}
+</div>
+<div class="annotated-code__code-block" id="c8">
+{% highlight python %}
+    self.class_prior_ = np.zeros(len(self.classes_),
+                                    dtype=np.float64)
+{% endhighlight %}
+</div>
+</div>
+<!-- END Code Blocks -->
+
+<!-- Annotations -->
+<div class="annotated-code__pane annotated-code__pane--annotations-container">
+    <ul id="annotated-code__annotations">
+<li class="annotation" id="a0">This is the first call to partial_fit: initialize various cumulative counters</li>
+<li class="annotation" id="a1">Get the class count</li>
+<li class="annotation" id="a2">Initialise the class prior Take into account the priors</li>
+<li class="annotation" id="a3">Convert to array</li>
+<li class="annotation" id="a4">Check that the provide prior match the number of classes</li>
+<li class="annotation" id="a5">Check that the sum is 1</li>
+<li class="annotation" id="a6">Check that the prior are non-negative</li>
+<li class="annotation" id="a7"></li>
+<li class="annotation" id="a8">Initialize the priors to zeros for each class</li>
+</ul>
+</div><!-- END Annotations -->
+</div><!-- END Annotated Code -->

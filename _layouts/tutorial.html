@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  {% include meta.html %}
+  <title>Scrollable Python</title>
+</head>
+
+<body data-page="tutorials" class="tutorials">
+  <div id="page-content">
+    <div id="header__mow-nav-trigger" class="js-mow-nav-trigger">
+      <div class="banner banner--interior-hero banner--short">
+        <div class="constrained constrained--sm">
+          <div class="banner--interior-hero__content">
+            <h1>Scrollable Python Documentation</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tutorials__content constrained constrained--med">
+      {{ content }}
+    </div>
+    {% include footer.html %}
+  </div>
+  <script src="/js/scripts.js"></script>
+</body>
+
+</html>
